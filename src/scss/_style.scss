@@ -104,3 +104,53 @@
   border: none;
   background-color: lightgreen;
 }
+.button {
+  margin-left: auto;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-text-secondary);
+  border: 0.1rem solid var(--color-border-medium);
+  padding: 1rem 5rem;
+  border-radius: 3rem;
+  box-shadow: var(--shadow-card);
+  background-color: var(--color-bg-tertiary);
+}
+.result-primary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+
+  &-title {
+    color: var(--color-text-primary);
+    font-size: 2.5rem;
+  }
+  &-container {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.result-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.result-title {
+  font-size: 2rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.result {
+  width: 100%;
+  padding: 1rem 3rem;
+  border: 0.1rem solid var(--color-border-light);
+  border-radius: 3rem;
+}
