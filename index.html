@@ -3,11 +3,129 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Claculate Your Date</title>
     <link rel="icon" href="./src/assets/img/icons/calendar-color-icon.svg" />
     <link rel="stylesheet" href="./dist/css/main.css" />
   </head>
   <body>
+    <div class="container">
+      <header class="hero">
+        <h1 class="hero-title">Claculate Your Date</h1>
+      </header>
+
+      <main class="claculator">
+        <form action="" class="card-form">
+          <div class="date">
+            <h2 class="refrance">Start Date:</h2>
+            <div class="input-container">
+              <label for="day" class="date-label">Day</label>
+              <input
+                id="day"
+                name="day"
+                type="number"
+                class="date-input"
+                placeholder="- -"
+                min="0"
+              />
+              <span class="vlaidation-message">must be a valid day</span>
+            </div>
+
+            <div class="input-container">
+              <label for="day" class="date-label">Month</label>
+              <input
+                id="month"
+                name="month"
+                type="number"
+                class="date-input"
+                placeholder="- -"
+                min="0"
+              />
+              <span class="vlaidation-message">must be a valid month</span>
+            </div>
+
+            <div class="input-container">
+              <label for="year" class="date-label">Year</label>
+              <input
+                id="year"
+                name="year"
+                type="number"
+                class="date-input"
+                placeholder="- - - -"
+                min="0"
+              />
+              <span class="vlaidation-message">must be a valid year</span>
+            </div>
+          </div>
+
+          <div class="date">
+            <h2 class="refrance">End Date:</h2>
+            <div class="input-container">
+              <label for="day" class="date-label">Day</label>
+              <input
+                id="day"
+                name="day"
+                type="number"
+                class="date-input"
+                placeholder="- -"
+                min="0"
+              />
+              <span class="vlaidation-message">must be a valid day</span>
+            </div>
+
+            <div class="input-container">
+              <label for="day" class="date-label">Month</label>
+              <input
+                id="month"
+                name="month"
+                type="number"
+                class="date-input"
+                placeholder="- -"
+                min="0"
+              />
+              <span class="vlaidation-message">must be a valid month</span>
+            </div>
+
+            <div class="input-container">
+              <label for="year" class="date-label">Year</label>
+              <input
+                id="year"
+                name="year"
+                type="number"
+                class="date-input"
+                placeholder="- - - -"
+                min="0"
+              />
+              <span class="vlaidation-message">must be a valid year</span>
+            </div>
+          </div>
+          <div class="short-cuts">
+            <div class="short-cuts-checkbox">
+              <input class="checkbox" id="current-date" type="checkbox" />
+              <label for="current-date" class="checkmark"></label>
+              <label class="checkbox-label" for="current-date"
+                >Current Date</label
+              >
+            </div>
+            <div class="short-cuts-checkbox">
+              <input class="checkbox" id="working-date" type="checkbox" />
+              <label for="working-date" class="checkmark"></label>
+              <label class="checkbox-label" for="working-date"
+                >Start Date Working Day</label
+              >
+            </div>
+          </div>
+        </form>
+
+        <article></article>
+      </main>
+      <footer></footer>
+    </div>
     <script type="module" src="src/js/main.js"></script>
   </body>
 </html>
