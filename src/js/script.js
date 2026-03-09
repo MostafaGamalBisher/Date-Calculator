@@ -60,9 +60,9 @@ export const result = ({ totalDays }) => {
   const months = Math.floor((totalDays % 365) / 30);
   const days = Math.floor((totalDays % 365) % 30);
 
-  const inYears = totalDays / 365;
-  const inMonths = totalDays / 30;
-  const inDays = totalDays;
+  const inYears = (totalDays / 365).toFixed(2);
+  const inMonths = (totalDays / 30).toFixed(2);
+  const inDays = totalDays.toFixed(2);
 
   return { years, months, days, inYears, inMonths, inDays };
 };
