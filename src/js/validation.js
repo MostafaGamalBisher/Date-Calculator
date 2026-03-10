@@ -1,14 +1,26 @@
-// import { getInputValues } from "../../src/js/script.js";
+export const validateDay = (input) => {
+  const inputs = input.closest(".date");
 
-// getInputValues();
+  const dayInput = inputs.querySelector("[name='day']");
+  const monthInput = inputs.querySelector("[name='month']");
+  const yearInput = inputs.querySelector("[name='year']");
 
-const validDay = document.querySelectorAll("[name='day']");
-const validMonth = document.querySelectorAll("[name='month']");
-const validYear = document.querySelectorAll("[name='year']");
+  const dayValue = Number(dayInput.value);
+  const monthValue = Number(monthInput.value);
+  const yearValue = Number(yearInput.value);
 
+  if (!dayValue || !monthValue || !yearValue) {
+    dayInput.classList.remove("valid", "invalid");
+    return;
+  }
 
-const vlaidateDay = (validDay) => {
-  const dayValue = Number(validDay.value);
+  const datesInMonth = new Date(yearValue, monthValue, 0).getDate();
 
-  if (dayValue >= 1 && dayValue <= 31 )
+  if (dayValue >= 1 && dayValue <= datesInMonth) {
+    dayInput.classList.remove("invalid");
+    dayInput.classList.add("valid");
+  } else {
+    dayInput.classList.remove("valid");
+    dayInput.classList.add("invalid");
+  }
 };

@@ -19,3 +19,19 @@ const calculateDuration = () => {
 
   console.log(duration);
 };
+
+const validateDay = (dayInput, monthInput, yearInput) => {
+  const dayValue = Number(dayInput.value);
+  const monthValue = Number(monthInput.value);
+  const yearValue = Number(yearInput.value);
+
+  const daysInMonth = new Date(yearValue, monthValue, 0).getDate();
+
+  if (dayValue >= 1 && dayValue <= daysInMonth) {
+    dayInput.classList.remove("invalid");
+    dayInput.classList.add("valid");
+  } else {
+    dayInput.classList.remove("valid");
+    dayInput.classList.add("invalid");
+  }
+};
