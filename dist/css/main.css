@@ -158,6 +158,8 @@ body {
 .vlaidation-message {
   opacity: 0;
   transition: opacity 0.3s ease;
+  font-size: 1.1rem;
+  color: var(--color-error);
 }
 .vlaidation-message.visible {
   opacity: 1;
