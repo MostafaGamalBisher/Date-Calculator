@@ -240,6 +240,10 @@ body {
   justify-content: center;
   align-items: center;
   gap: 4rem;
+  border: 0.1rem solid var(--color-border-light);
+  padding: 2rem 3rem;
+  border-radius: 3rem;
+  background-color: var(--color-bg-secondary);
 }
 .result-primary-title {
   color: var(--color-text-primary);
@@ -265,6 +269,7 @@ body {
   font-size: 2rem;
   color: var(--color-text-secondary);
   font-weight: 500;
+  text-shadow: 0 0 1px #1e3b75;
 }
 
 .result {
@@ -272,13 +277,17 @@ body {
   padding: 1rem 3rem;
   border: 0.1rem solid var(--color-border-light);
   border-radius: 3rem;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 4px 17px -9px #1761f4;
+  background-color: var(--color-bg-tertiary);
 }
 
 @media (max-width: 520px) {
   .hero {
     text-align: center;
     font-size: 1rem;
+  }
+  .card-form {
+    padding: 2rem 3rem;
   }
   .date {
     display: grid;
@@ -310,6 +319,9 @@ body {
   }
   .result {
     font-weight: 400;
+  }
+  .result-primary-container {
+    gap: 2rem;
   }
 }
 

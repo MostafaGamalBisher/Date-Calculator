@@ -4,6 +4,10 @@
     font-size: 1rem;
   }
 
+  .card-form {
+    padding: 2rem 3rem;
+  }
+
   .date {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -40,5 +44,9 @@
 
   .result {
     font-weight: 400;
+  }
+
+  .result-primary-container {
+    gap: 2rem;
   }
 }

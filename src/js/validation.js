@@ -18,13 +18,13 @@ export const validateDay = (input) => {
   const monthMessage = monthInput.nextElementSibling;
   const yearMessage = yearInput.nextElementSibling;
 
+  const datesInMonth = new Date(yearValue, monthValue, 0).getDate();
+
   if (!dayInput.value || !monthInput.value) {
     dayInput.classList.remove("valid", "invalid");
     monthInput.classList.remove("valid", "invalid");
     return;
   }
-
-  const datesInMonth = new Date(yearValue, monthValue, 0).getDate();
 
   if (dayRaw.includes(".")) {
     dayInput.classList.remove("valid", "warn");
