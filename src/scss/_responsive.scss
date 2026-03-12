@@ -12,6 +12,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
+    gap: 1rem;
 
     .refrance {
       grid-column: 1/-1;
@@ -47,6 +48,6 @@
   }
 
   .result-primary-container {
-    gap: 2rem;
+    gap: 1rem;
   }
 }

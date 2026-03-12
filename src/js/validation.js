@@ -18,44 +18,37 @@ export const validateDay = (input) => {
   const monthMessage = monthInput.nextElementSibling;
   const yearMessage = yearInput.nextElementSibling;
 
-  const datesInMonth = new Date(yearValue, monthValue, 0).getDate();
+  /* validating day inputs */
 
-  if (!dayInput.value || !monthInput.value) {
+  if (!dayInput.value) {
+    //checks if the input is empty if so removes warnings
+
     dayInput.classList.remove("valid", "invalid");
-    monthInput.classList.remove("valid", "invalid");
-    return;
-  }
-
-  if (dayRaw.includes(".")) {
-    dayInput.classList.remove("valid", "warn");
-    dayInput.classList.add("invalid");
-    dayMessage.classList.add("visible");
-  }
-
-  if (monthRaw.includes(".")) {
-    monthInput.classList.remove("valid", "warn");
-    monthInput.classList.add("invalid");
-    monthMessage.classList.add("visible");
-  }
-
-  if (yearRaw.includes(".")) {
-    yearInput.classList.remove("valid", "warn");
-    yearInput.classList.add("invalid");
-    yearMessage.classList.add("visible");
-    return;
-  }
-
-  if (dayValue >= 1 && dayValue <= datesInMonth) {
-    dayInput.classList.remove("invalid");
-    dayInput.classList.add("valid");
     dayMessage.classList.remove("visible");
   } else {
-    dayInput.classList.remove("valid");
-    dayInput.classList.add("invalid");
-    dayMessage.classList.add("visible");
+    //to prevent ealry caculation of number of days in the month
+    const datesInMonth = new Date(yearValue, monthValue, 0).getDate();
+
+    if (!dayRaw.includes(".") && dayValue >= 1 && dayValue <= datesInMonth) {
+      //vlaidate if the input does not  has "." & value >= than 1 & <= the dates in the month
+
+      dayInput.classList.remove("invalid");
+      dayInput.classList.add("valid");
+      dayMessage.classList.remove("visible");
+    } else {
+      //inavildating the rest cases
+
+      dayInput.classList.remove("valid");
+      dayInput.classList.add("invalid");
+      dayMessage.classList.add("visible");
+    }
   }
 
-  if (monthValue >= 1 && monthValue <= 12) {
+  /* validating month inputs */
+  if (!monthInput.value) {
+    monthInput.classList.remove("valid", "invalid");
+    monthMessage.classList.remove("visible");
+  } else if (!monthRaw.includes(".") && monthValue >= 1 && monthValue <= 12) {
     monthInput.classList.remove("invalid");
     monthInput.classList.add("valid");
     monthMessage.classList.remove("visible");
@@ -65,11 +58,17 @@ export const validateDay = (input) => {
     monthMessage.classList.add("visible");
   }
 
-  if (yearValue === 0) {
+  /* validating year inputs */
+
+  //years can be 0 or 1 or more only and can't be decimal or lower than 0
+  if (!yearInput.value) {
+    yearInput.classList.remove("valid", "invalid");
+    yearMessage.classList.remove("visible");
+  } else if (yearValue === 0) {
     yearInput.classList.remove("invalid", "valid");
     yearInput.classList.add("warn");
     yearMessage.classList.remove("visible");
-  } else if (yearValue < 0) {
+  } else if (yearValue < 0 || yearRaw.includes(".")) {
     yearInput.classList.remove("valid", "warn");
     yearInput.classList.add("invalid");
     yearMessage.classList.add("visible");
@@ -77,9 +76,5 @@ export const validateDay = (input) => {
     yearInput.classList.remove("invalid", "warn");
     yearInput.classList.add("valid");
     yearMessage.classList.remove("visible");
-  } else {
-    yearInput.classList.remove("valid", "warn");
-    yearInput.classList.add("invalid");
-    yearMessage.classList.add("visible");
   }
 };

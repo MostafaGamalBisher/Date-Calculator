@@ -294,6 +294,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
+    gap: 1rem;
   }
   .date .refrance {
     grid-column: 1/-1;
@@ -322,7 +323,7 @@ body {
     font-weight: 400;
   }
   .result-primary-container {
-    gap: 2rem;
+    gap: 1rem;
   }
 }
 
