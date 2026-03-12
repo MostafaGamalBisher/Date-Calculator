@@ -78,3 +78,36 @@ export const validateDay = (input) => {
     yearMessage.classList.remove("visible");
   }
 };
+
+//vlaidating button >> stop claculations if is not valid
+const currentDateCheckbox = document.querySelector("#current-date");
+
+export const isFormValid = () => {
+  const dateSections = document.querySelectorAll(".date");
+
+  const startDate = dateSections[0];
+  const endDate = dateSections[1];
+
+  //start date has invalid calss
+  const startDateInvalid = startDate.querySelector(".date-input.invalid");
+  //start date has empty input
+  const startDateEmpty =
+    !startDate.querySelector("[name='day']").value ||
+    !startDate.querySelector("[name='month']").value;
+
+  if (startDateInvalid || startDateEmpty) return false;
+
+  //validating the end date if only checkbox is not checked
+
+  if (!currentDateCheckbox.checked) {
+    const endDateInvalid = endDate.querySelector(".date-input.invalid");
+
+    const endDateEmpty =
+      endDate.querySelector("[name='day']").value ||
+      endDate.querySelector("[name='month']").value;
+
+    if (endDateInvalid || endDateEmpty) return false;
+  }
+
+  return true;
+};

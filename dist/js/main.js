@@ -1,11 +1,13 @@
 /* caclulation */
 
 import { getInputValues, result, displayResult } from "../../src/js/script.js";
-import { validateDay } from "../../src/js/validation.js";
+import { isFormValid, validateDay } from "../../src/js/validation.js";
 
 const button = document.querySelector(".button");
 
 const calculateDuration = () => {
+  if (!isFormValid()) return;
+
   const dates = getInputValues();
 
   const getResult = result(dates);
