@@ -26,3 +26,35 @@ inputs.forEach((input) => {
     validateDay(e.target);
   });
 });
+
+const currentDateCheckbox = document.querySelector("#current-date");
+const endDay = document.querySelector("#endDay");
+const endMonth = document.querySelector("#endMonth");
+const endYear = document.querySelector("#endYear");
+
+currentDateCheckbox.addEventListener("change", () => {
+  if (currentDateCheckbox.checked) {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    endDay.value = today.getDay();
+    endMonth.value = today.getMonth() + 1;
+    endYear.value = today.getFullYear();
+
+    endDay.disabled = true;
+    endMonth.disabled = true;
+    endYear.disabled = true;
+
+    validateDay(endDay);
+  } else {
+    endDay.value = "";
+    endMonth.value = "";
+    endYear.value = "";
+
+    endDay.disabled = false;
+    endMonth.disabled = false;
+    endYear.disabled = false;
+
+    validateDay(endDay);
+  }
+});

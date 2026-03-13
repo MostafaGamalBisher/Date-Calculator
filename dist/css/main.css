@@ -143,6 +143,11 @@ body {
   border: 0.1rem solid var(--color-accent-hover);
 }
 
+.date-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .valid {
   border: 0.1rem solid var(--color-success);
 }
