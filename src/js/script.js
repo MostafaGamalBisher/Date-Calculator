@@ -16,6 +16,7 @@ const workingDate = document.querySelector("#working-date");
 /* calculating start/end dates in miliseconds */
 
 export const getInputValues = () => {
+  //new way to write number()
   const sDay = +start.day.value;
   const sMonth = +start.month.value;
   const sYear = +start.year.value;
