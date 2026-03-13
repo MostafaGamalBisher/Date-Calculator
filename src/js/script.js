@@ -76,9 +76,9 @@ export const getInputValues = () => {
 // };
 
 export const result = ({ startDate, endDate }) => {
-  const miliseconds = 1000 * 60 * 60 * 24;
+  const milliseconds = 1000 * 60 * 60 * 24;
 
-  let totalDays = Math.floor((endDate - startDate) / miliseconds);
+  let totalDays = Math.floor((endDate - startDate) / milliseconds);
 
   let years = endDate.getFullYear() - startDate.getFullYear();
   let months = endDate.getMonth() - startDate.getMonth();
