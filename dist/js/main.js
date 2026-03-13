@@ -35,7 +35,6 @@ const endYear = document.querySelector("#endYear");
 currentDateCheckbox.addEventListener("change", () => {
   if (currentDateCheckbox.checked) {
     const today = new Date();
-    today.setHours(0, 0, 0, 0);
 
     endDay.value = today.getDay();
     endMonth.value = today.getMonth() + 1;
