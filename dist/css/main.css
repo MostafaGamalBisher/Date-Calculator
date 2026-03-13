@@ -90,7 +90,7 @@ body {
   text-shadow: 0rem 1rem 1rem rgba(44, 58, 88, 0.3411764706);
 }
 
-.claculator {
+.calculator {
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -165,7 +165,7 @@ body {
   opacity: 1;
 }
 
-.refrance {
+.reference {
   line-height: 2rem;
   font-size: 1.5rem;
   color: var(--color-text-muted);
@@ -296,7 +296,7 @@ body {
     justify-items: center;
     gap: 1rem;
   }
-  .date .refrance {
+  .date .reference {
     grid-column: 1/-1;
   }
   .date .date-input {
