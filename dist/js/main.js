@@ -3,6 +3,7 @@
 import { getInputValues, result, displayResult } from "../../src/js/script.js";
 import { isFormValid, validateDay } from "../../src/js/validation.js";
 
+/* calculating and displaying results */
 const button = document.querySelector(".button");
 
 const calculateDuration = () => {
@@ -15,7 +16,13 @@ const calculateDuration = () => {
   displayResult(getResult);
 };
 
+/* claculation button (mouse) */
 button.addEventListener("click", calculateDuration);
+
+/* enter button (keyboard accessibility)  */
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") calculateDuration();
+});
 
 /* validation days */
 

@@ -237,6 +237,11 @@ body {
   border-radius: 3rem;
   box-shadow: var(--shadow-card);
   background-color: var(--color-bg-tertiary);
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  border: 0.1rem solid var(--color-warning);
 }
 
 .result-primary {
